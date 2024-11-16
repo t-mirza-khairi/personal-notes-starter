@@ -1,7 +1,8 @@
 import React from "react";
 import NotesItem from "./NotesItem";
 
-const NotesList = ({ notes, onDelete, onArchieve }) => {
+const NotesList = (props) => {
+  const { notes, onDelete, onArchieve } = props;
   return (
     <>
       <h2>Catatan Aktif</h2>
