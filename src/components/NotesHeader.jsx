@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const NotesHeader = () => {
   return (
     <nav className="note-app__header">
       <h1>Notes</h1>
@@ -12,4 +12,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NotesHeader;
