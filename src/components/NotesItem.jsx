@@ -6,7 +6,7 @@ import DeleteButton from "./Button/DeleteButton";
 import ArchieveButton from "./Button/ArchieveButton";
 import { showFormattedDate } from "../utils";
 
-const NotesItem = ({ title, body, id, onDeleteHandler, onArchieve }) => {
+const NotesItem = ({ title, body, id, onDelete, onArchieve }) => {
   return (
     <div className="note-item">
       <div className="note-item__content">
@@ -15,7 +15,7 @@ const NotesItem = ({ title, body, id, onDeleteHandler, onArchieve }) => {
         <NotesItemBody body={body} />
       </div>
       <div className="note-item__action">
-        <DeleteButton id={id} onDeleteHandler={onDeleteHandler} />
+        <DeleteButton id={id} onDelete={onDelete} />
         <ArchieveButton id={id} onArchieve={onArchieve} />
       </div>
     </div>

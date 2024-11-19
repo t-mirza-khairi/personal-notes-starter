@@ -3,6 +3,7 @@ import { getInitialData, showFormattedDate } from "../utils";
 import NotesList from "../components/NotesList";
 import NotesInput from "../components/NotesInput";
 import NotesHeader from "../components/NotesHeader";
+import NotesArchive from "../components/NotesArchive";
 
 class NotesApp extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class NotesApp extends React.Component {
     this.state = {
       notes: getInitialData(),
       formattedDate: showFormattedDate(new Date()),
+      searchQuery: "",
     };
 
     this.onAddNotesHandler = this.onAddNotesHandler.bind(this);
@@ -43,6 +45,10 @@ class NotesApp extends React.Component {
     this.setState({ notes });
   }
 
+  onSearchHandler(event) {
+    this.setState({ searchQuery: event.target.value });
+  }
+
   render() {
     return (
       <>
@@ -54,6 +60,7 @@ class NotesApp extends React.Component {
             onDelete={this.onDeleteHandler}
             onArchieve={this.onArchieveHandler}
           />
+          <NotesArchive />
         </div>
       </>
     );
